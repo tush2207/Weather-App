@@ -1,12 +1,12 @@
 import "./Weatherapp.css";
 import React from "react";
-import Time from "../Weather/Time";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Avatar } from "@mui/material";
 import { WEATHER_API_KEY } from "../ApiKeys/Apikeys";
 import TextField from '@material-ui/core/TextField';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
+import Date from '../Weather/Date'
 const Part = () => {
   const [temp, setTemp] = useState(null);
   let [entercity, setEntercity] = useState('Mumbai');
@@ -30,7 +30,7 @@ const Part = () => {
       .catch((e) => {
         console.log(e.response.data.message);
       });
-  },[]);
+  },[apiUrl]);
 
   console.log("data", temp);
 
@@ -48,8 +48,8 @@ const Part = () => {
           variant="outlined"
           onChange={city}
         />
+        <Date/>
 
-<Time />
           </div>
 
         
