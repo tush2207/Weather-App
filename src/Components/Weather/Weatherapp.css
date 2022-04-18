@@ -1,0 +1,78 @@
+body {
+  background-image: url("/home/v2stech/Documents/React Training/Projcts/Weather App/public/image/w.avif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.Header {
+  background-color: rgba(240, 61, 37, 0.4);
+  justify-content: space-between;
+  display: flex;
+  padding:0px 10px ;
+  flex-direction: row;
+  /* padding: 5px; */
+  font-size: 1.5rem;
+}
+.Location-Date{
+  display: flex;
+}
+.Content {
+  display: flex;
+  justify-content: space-between;
+}
+.City{
+  font-size: 2rem;
+}
+
+.Right_Sidebar {
+  margin-top: 8%;
+  justify-items: end;
+  justify-content: flex-end;
+}
+.Left_Sidebar {
+margin-left: 20px;
+
+}
+.Temp{
+    font-size: 4rem;
+}
+.Min_Max{
+    display: flex;
+    justify-content: space-between;
+}
+.Img-Temp{
+  display: flex;    
+  flex-direction: row;
+  padding:10px;
+  justify-items:end;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  
+}
+
+.Right_Sidebar-Content {
+  display: flex;
+  justify-content: space-evenly;
+
+}
+.Weather-Info{
+  background-color: rgba(21, 74, 248, 0.4);
+  margin: 20px;
+  text-align: end;
+  width: 200px;
+}
+.Weather-Apidata {
+  text-align: end;
+  background-color: #154af8e6;
+  font-size: 2rem;
+  padding:0px 8px;
+
+}
+
+h2{
+  padding:0px 8px;
+
+}
+
