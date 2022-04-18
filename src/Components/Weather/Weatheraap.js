@@ -24,15 +24,13 @@ const Part = () => {
   useEffect(() => {
     axios
       .get(apiUrl)
-      //  const getApi = axios.get(`https://api.openweathermap.org/data/2.5/weather?q=Mumbai&appid=f0d6e49c0241d9f4465b0ec0b33ffad4
-      //  `)
       .then((response) => {
         setTemp(response.data);
       })
       .catch((e) => {
         console.log(e.response.data.message);
       });
-  });
+  },[]);
 
   console.log("data", temp);
 

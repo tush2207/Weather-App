@@ -1,1 +1,1 @@
-export const WEATHER_API_KEY = "a606a6908018c627f037f379eb76a9eb";
+export const WEATHER_API_KEY = "7607d41b60a0c17a902818c31873eca2";
