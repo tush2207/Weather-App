@@ -4,15 +4,16 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Avatar } from "@mui/material";
 import { WEATHER_API_KEY } from "../ApiKeys/Apikeys";
-import TextField from '@material-ui/core/TextField';
-import LocationOnIcon from '@material-ui/icons/LocationOn';
-import Date from '../Weather/Date'
+import TextField from "@material-ui/core/TextField";
+import LocationOnIcon from "@material-ui/icons/LocationOn";
+import Date from "../Weather/Date";
+
 const Part = () => {
   const [temp, setTemp] = useState(null);
-  let [entercity, setEntercity] = useState('Mumbai');
+  let [entercity, setEntercity] = useState("Mumbai");
   const city = (e) => {
     setEntercity(e.target.value);
-  }
+  };
   // let city = "Mumbai"
   //Declaration of Country Name
   let country = "India";
@@ -30,7 +31,7 @@ const Part = () => {
       .catch((e) => {
         console.log(e.response.data.message);
       });
-  },[apiUrl]);
+  }, [apiUrl]);
 
   console.log("data", temp);
 
@@ -38,28 +39,26 @@ const Part = () => {
     <>
       <div className="body">
         <div className="Header">
-
           <h2>Current Weather</h2>
           <div className="Location-Date">
-          <TextField
-          style={{height:35, marginTop:25}}
-          id="filled-textarea"
-          label="Location"
-          variant="outlined"
-          onChange={city}
-        />
-        <Date/>
-
+            <TextField
+              style={{ height: 35, marginTop: 25 }}
+              id="filled-textarea"
+              label="Location"
+              variant="outlined"
+              onChange={city}
+            />
+            <Date />
           </div>
-
-        
-
         </div>
 
         <div className="Content">
           <div className="Left_Sidebar">
             <div className="City">
-              <h1><LocationOnIcon fontSize="large" />{entercity}</h1>
+              <h1>
+                <LocationOnIcon fontSize="large" />
+                {entercity}
+              </h1>
             </div>
             <div>
               <div className="Img-Temp">
@@ -71,7 +70,7 @@ const Part = () => {
                       height: "auto",
                       border: "2px solid black",
                       marginRight: 6,
-                      backgroundColor:"rgba(28, 74, 248, 0.3.2)"
+                      backgroundColor: "rgba(28, 74, 248, 0.3.2)",
                     }}
                     src={`http://openweathermap.org/img/wn/${
                       temp && temp.weather[0].icon
@@ -92,11 +91,15 @@ const Part = () => {
             <div className="Right_Sidebar-Content">
               <div className="Weather-Info">
                 <h2>Humidity</h2>
-                <div className="Weather-Apidata">{temp && temp.main.humidity}%</div>
+                <div className="Weather-Apidata">
+                  {temp && temp.main.humidity}%
+                </div>
               </div>
               <div className="Weather-Info">
                 <h2>Pressure</h2>
-                <div className="Weather-Apidata">{temp && temp.main.pressure}hPa</div>
+                <div className="Weather-Apidata">
+                  {temp && temp.main.pressure}hPa
+                </div>
               </div>
               <div className="Weather-Info">
                 <h2>Wind</h2>
@@ -108,15 +111,23 @@ const Part = () => {
             <div className="Right_Sidebar-Content">
               <div className="Weather-Info">
                 <h2>Sunrise</h2>
-                <div className="Weather-Apidata"> {temp && temp.sys.sunrise}</div>
+                <div className="Weather-Apidata">
+                  {" "}
+                  {temp && temp.sys.sunrise}
+                </div>
               </div>
               <div className="Weather-Info">
                 <h2>Sunset</h2>
-                <div className="Weather-Apidata"> {temp && temp.sys.sunset}</div>
+                <div className="Weather-Apidata">
+                  {" "}
+                  {temp && temp.sys.sunset}
+                </div>
               </div>
               <div className="Weather-Info">
                 <h2 className="title">Description</h2>
-                <div className="Weather-Apidata">{temp && temp.weather[0].description}</div>
+                <div className="Weather-Apidata">
+                  {temp && temp.weather[0].description}
+                </div>
               </div>
             </div>
           </div>

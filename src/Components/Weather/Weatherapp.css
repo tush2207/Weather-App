@@ -75,4 +75,7 @@ h2{
   padding:0px 8px;
 
 }
-
+.Time{
+  display: flex;
+  flex-direction: row;
+}
