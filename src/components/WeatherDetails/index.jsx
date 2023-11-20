@@ -1,11 +1,13 @@
+import { Grid, Stack, Typography } from '@mui/material';
 import React from 'react';
-import './weatherDetails.css';
-import { Box, Grid, Stack, Typography } from '@mui/material';
 import weatherImg from '../../assets/weather.jpg';
 import { getTimeInfo } from '../../utils/helper';
+import './weatherDetails.css';
 function WeatherDetails(props) {
   const { data } = props && props;
+
   console.log(props, 'props');
+
   const iconurl =
     'http://openweathermap.org/img/wn/' +
     `${data?.cod !== 404 ? data?.weather[0].icon : null}` +

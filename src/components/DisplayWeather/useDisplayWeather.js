@@ -22,7 +22,7 @@ const useDisplayWeather = () => {
 
   useEffect(() => {
     fetchWeatherData();
-  }, []);
+  });
 
   const getWeatherDetails = (e) => {
     e.preventDefault();

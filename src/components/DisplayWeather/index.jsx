@@ -1,6 +1,5 @@
-import LocationOnIcon from '@material-ui/icons/LocationOn';
 import { Container, Grid, Stack, TextField, Typography } from '@mui/material';
-import React, { useLayoutEffect, useState } from 'react';
+import React from 'react';
 import './DisplayWeather.css';
 import { Box } from '@material-ui/core';
 import useDisplayWeather from './useDisplayWeather';
