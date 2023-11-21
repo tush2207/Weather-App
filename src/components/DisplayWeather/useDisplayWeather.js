@@ -27,12 +27,16 @@ const useDisplayWeather = () => {
   };
 
   useEffect(() => {
+    const fetchData = async () => {
+      await fetchWeatherData();
+    };
+
     // Only make the API call on initial load or when the search button is clicked
     if (initialLoad) {
-      fetchWeatherData();
+      fetchData();
       setInitialLoad(false);
     }
-  }, [initialLoad, cityName]);
+  }, [initialLoad, cityName, fetchWeatherData]);
 
   return { weatherDetails, handleChange, cityName, getWeatherDetails };
 };
