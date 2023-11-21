@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import weatherServices from '../../api';
 
 const useDisplayWeather = () => {
@@ -6,14 +6,15 @@ const useDisplayWeather = () => {
   const [cityName, setCityName] = useState('Mumbai');
   const [initialLoad, setInitialLoad] = useState(true);
 
-  async function fetchWeatherData() {
+  // Modified code
+  const fetchWeatherData = useCallback(async () => {
     try {
       const response = await weatherServices.getWeatherDetailsApi(cityName);
       setWeatherDetails(response?.data);
     } catch (error) {
       console.error('Error fetching weather data:', error);
     }
-  }
+  }, [cityName]); // Add dependencies if needed
 
   const handleChange = (e) => {
     const { value } = e.target;
@@ -36,7 +37,7 @@ const useDisplayWeather = () => {
       fetchData();
       setInitialLoad(false);
     }
-  }, [initialLoad, cityName, fetchWeatherData]);
+  }, [initialLoad, fetchWeatherData]);
 
   return { weatherDetails, handleChange, cityName, getWeatherDetails };
 };
