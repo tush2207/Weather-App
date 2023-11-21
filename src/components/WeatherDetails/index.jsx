@@ -6,12 +6,10 @@ import './weatherDetails.css';
 function WeatherDetails(props) {
   const { data } = props && props;
 
-  console.log(props, 'props');
-
-  const iconurl =
-    'http://openweathermap.org/img/wn/' +
-    `${data?.cod !== 404 ? data?.weather[0].icon : null}` +
-    '.png';
+  // const iconurl =
+  //   'http://openweathermap.org/img/wn/' +
+  //   `${data?.cod !== 404 ? data?.weather[0].icon : null}` +
+  //   '.png';
 
   const { currentDate, currentDay, currentTime } = getTimeInfo();
 
@@ -57,62 +55,7 @@ function WeatherDetails(props) {
                   </Typography>
                 </Grid>
               </Grid>
-
-              {/* <Box style={{ border: '1px  solid red' }} marginTop='10px'>
-                <Typography
-                  variant='h3'
-                  textAlign='start'
-                  
-                  style={{ border: '1px  solid red' }}
-                >
-                  {currentTime}
-                </Typography>
-                <Typography
-                  variant='h5'
-                  textAlign='start'
-                  color='whitesmoke'
-                  style={{ border: '1px  solid red' }}
-                >
-                  {currentDay} {currentDate}
-                </Typography>
-              </Box> */}
             </Stack>
-            {/* <Typography
-              variant='h4'
-              style={{ textAlign: 'end', color: 'whitesmoke' }}
-            >
-              {data?.name} , {data?.sys.country}
-            </Typography> */}
-            {/* <img
-              className='weather-icon'
-              src={iconurl}
-              alt=''
-              srcSet=''
-              style={{
-                backgroundColor: 'whitesmoke',
-                borderRadius: '100px',
-                marginTop: '20px',
-              }}
-            /> */}
-
-            {/* <Box marginTop='10px'>
-              <Typography variant='h3' textAlign='start' color='white'>
-                {currentTime}
-              </Typography>
-              <Typography variant='h5' textAlign='start' color='whitesmoke'>
-                {currentDay} {currentDate}
-              </Typography>
-            </Box> */}
-            {/* <Typography
-              // variant='h1'
-              textAlign='end'
-              color='whitesmoke'
-              fontSize='75px'
-            >
-              {Math.floor(data?.main.temp - 273.15)}
-              <sup>o</sup> C
-            </Typography> */}
-            {/* <span className='weather-main'>{data?.weather[0].main}</span> */}
           </div>
           <div className='weatherdetails'>
             <div className='section1'>

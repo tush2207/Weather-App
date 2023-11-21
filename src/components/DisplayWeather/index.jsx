@@ -1,15 +1,12 @@
-import { Container, Grid, Stack, TextField, Typography } from '@mui/material';
 import React from 'react';
-import './DisplayWeather.css';
-import { Box } from '@material-ui/core';
-import useDisplayWeather from './useDisplayWeather';
 import WeatherDetails from '../WeatherDetails';
+import './DisplayWeather.css';
+import useDisplayWeather from './useDisplayWeather';
+import { Button } from '@mui/material';
 
 const DisplayWeather = () => {
   const { handleChange, cityName, weatherDetails, getWeatherDetails } =
     useDisplayWeather();
-
-  console.log(weatherDetails, 'weatherDetails');
 
   return (
     <div className='weather'>
@@ -23,9 +20,18 @@ const DisplayWeather = () => {
           value={cityName}
           onChange={(e) => handleChange(e)}
         />
-        <button className='getweather' onClick={(e) => getWeatherDetails(e)}>
+        <Button
+          variant='outlined'
+          type='submit'
+          color='success'
+          onClick={(e) => getWeatherDetails(e)}
+        >
+          Submit
+        </Button>
+
+        {/* <button className='getweather' onClick={(e) => getWeatherDetails(e)}>
           Search
-        </button>
+        </button> */}
       </form>
 
       {weatherDetails !== undefined ? (
